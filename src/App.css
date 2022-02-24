@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.GridContainer {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.ag-row .ag-cell {
+  display: flex;
+  justify-content: left; /* align horizontal */
+  align-items: center;
+}

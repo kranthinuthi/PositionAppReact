@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { AgGridReact } from 'ag-grid-react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { NavigationBar } from './components/NavigationBar';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import 'ag-grid-community/dist/styles/ag-theme-alpine-dark.css';
 import './App.css';
 
 function App() {
@@ -35,13 +37,18 @@ function App() {
 
   return (
     <div className="App">
-      <div className="ag-theme-alpine" style={{height: 800, width: 1400}}>
+    <React.Fragment>
+        <NavigationBar />
+    </React.Fragment>
+    <div className="GridContainer">
+    <div className="ag-theme-alpine-dark" style={{width: '100%', height:850}}>
            <AgGridReact
-               rowData={rowData}
-               columnDefs={columnDefs}>
-           </AgGridReact>
-       </div>
-    </div>
+                rowData={rowData}
+                columnDefs={columnDefs}>
+            </AgGridReact>
+        </div>
+     </div>
+    </div> 
   );
 }
 
